@@ -14,14 +14,18 @@
 ### 開始專案
   - 無原始檔案
     - git init
+    - git remote add [名稱(origin)] [網址]
+    - git add .
+    - git commit -m init
+    - git push origin master
   - 若有原始專案
-    - 建議:git init -> git remote add [名稱(origin)] [網址] -> git pull [名稱(origin)] [分支] 
-    - 複製專案:  git clone [網址]
-      - 若要觀看遠端分支資料: git checkout [遠端分支名稱(可由git branch -a觀看)]
-        - ex: git checkout origin/experimental
-      - 若要修改遠端分支資料(本地分支會多一個新分支): git checkout 遠端的分支名稱
-        - ex: git checkout experimental
-    - 或複製他人專案分支 : git clone [網址] [分支名稱]
+    - 第一種方式: git init -> git remote add [名稱(origin)] [網址] -> git pull [名稱(origin)] [分支] 
+    - 第二種方式: git clone [網址]
+      - 複製他人專案分支 : git clone [網址] [分支名稱]
+    - 若要觀看遠端分支資料: git checkout [遠端分支名稱(可由git branch -a觀看)]
+      - ex: git checkout origin/experimental
+    - 若要修改遠端分支資料(本地分支會多一個新分支): git checkout 遠端的分支名稱
+      - ex: git checkout experimental
     - 複製單一分支: git clone --single-branch --branch <branchname> <remote-repo>
       - git clone -b <branch> <remote_repo>
     - 更新遠端所有分支: git remote update origin --prune
