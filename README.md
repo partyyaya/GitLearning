@@ -24,32 +24,31 @@
       - 複製他人專案分支 : git clone [網址] [分支名稱]
       - 若要觀看遠端分支資料: git checkout [遠端分支名稱(可由 git branch -r 觀看)]
         - ex: git checkout origin/experimental
-      - 若要修改遠端分支資料(本地分支會多一個新分支): git checkout [遠端分支名稱]
+      - 取得遠端分支資料(本地會多一個新分支): git checkout [遠端分支名稱]
         - ex: git checkout experimental
       - 複製單一分支: git clone --single-branch --branch [分支名稱] [遠端位置]
         - git clone -b [分支名稱] [遠端位置]
       - 更新遠端所有分支: git remote update origin --prune
-  - 取得遠端資訊(若取得不到) : git fetch origin 
-  - 將分支上傳(遠端和本地都將會出現新分支) : git push origin dev 
-  - 查看目前在哪個分支 : git branch 
-  - 切換至分支 : git checkout dev  
+      - 取得遠端資訊(若取得不到) : git fetch origin  
     
+---
 ### 上傳常用指令
-  - git status
+  - 查看目前狀態: git status
     - 若對單一檔案想還原到上個commit狀態: git checkout 檔案名
     - 全部還原到上一版狀態: git reset --hard
   - 加入全部到索引: git add .
   - 加入單一檔案進索引: git add 檔案名
     - 若要取消全部索引狀態: git reset HEAD 或 git reset
     - 取消單筆: git reset HEAD 檔案名 或 git reset 檔案名
-  - git commit -m (修改訊息)
+  - git commit -m (版本訊息)
     - 若想修改剛剛"最新"的 commit message: git commit --amend -m 想修改的訊息
   - git push (遠端位置或名稱(origin)) (分支名稱)
   
-### 合併遠端分支
-  - git checkout [主要分支]
-  - git merge [分支]
-  - git push origin [主要分支]
+---
+### 合併分支(含遠端)
+  - 先切換到主分支: git checkout [主要分支]
+  - 將分支合併到主分支: git merge [分支]
+  - 將主分支資訊上傳至遠端: git push origin [主要分支]
   - 刪除遠端分支: 
     - 先刪除本地分支: git branch -d [分支]
     - 將刪除分支資訊上傳到遠端: git push origin :[分支]
@@ -59,6 +58,7 @@
     - 合併專案: git merge [分支]
     - 上傳更新: git push origin [主要分支]
     
+---
 ### gitignore
   - 直接使用記事本新增即可(utf-8編碼存取)
     - 或使用終端機創建: touch .gitignore
@@ -71,7 +71,7 @@
       git add .
       git commit -m "fixed untracked files"
       ```
-  
+---
 ### git 常用指令
   - 切換分支或看紀錄
     - git checkout (commit前4碼，可由git log觀看)
@@ -93,22 +93,24 @@
   - git blame index.html:查看該檔案修改的所有紀錄
   - git reflog:查看移動HEAD移動歷程(狀態每當你的HEAD有移動~他就會在這邊記上一筆)
 
+---
 ### git branch 常用指令
   - 查看所有遠端分支: git branch -r
     - 結束: q
   - 查看所有分支: git branch -a
     - 結束: q
-  - 查看本地所有分支: git branch
-  - 新增遠端位置: git remote add [名稱(origin)] [網址]
+  - 查看本地所有分支與所在分支: git branch
   - 刪除分支: git branch -d [分支名稱]
   - 新增 [新分支] 於 [主分支] 底下 : git branch [新分支] ([主分支可加可不加,但要在主分支底下) 
 
+---
 ### git remote 常用指令
   - 重設遠端分支網址: git remote set-url [遠端位置名稱] [url]
   - 改變遠端位置名稱: git remote rename [原名稱] [修改名稱]
   - 查看有哪些遠端位置(使用 git clone 附有 origin): git remote -v
   - 新增遠端位置: git remote add [名稱(origin)] [網址]
-  
+
+---
 ### 標籤使用(git tag)
   - 在此版本新增標籤: git tag 標籤名稱(git tag v1)
   - 新增詳細標籤: git tag -am '敘述' 標籤名稱(git tag 'update xxxx' v1)
@@ -117,7 +119,8 @@
   - 查看所有詳細標籤內容: git tag -n
     - 若沒有設定標籤內容則會自帶當初此版本commit敘述內容
   - 刪除標籤: git tag -d v1(標籤名稱)
-  
+
+---
 ### 暫存使用(git stash)
   - 暫存當前版本進度: git stash
     - (Untracked 狀態的檔案預設沒辦法被 Stash，需額外使用 -u)
