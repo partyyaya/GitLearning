@@ -8,35 +8,34 @@
 - 查看git設定
   - git config --global user.name
   - git config --global user.email
-- 重設遠端分支網址
-  - git remote set-url [遠端位置名稱] [url]
-  - 改變遠端位置名稱: git remote rename [原名稱] [修改名稱]
+- 重設遠端分支網址: git remote set-url [遠端位置名稱] [url]
+- 改變遠端位置名稱: git remote rename [原名稱] [修改名稱]
   
 ### 開始專案
   - 無原始檔案
-    - git init
-    - git remote add [名稱(origin)] [網址]
+    - 初始化 git: git init
+    - 新增遠端位置: git remote add [名稱(origin)] [網址]
       - 網址可透過 github 開新專案後取得
-    - git add .
-    - git commit -m init
-    - git push origin master
+    - 將新增內容全部加入: git add .
+    - 進行初始化 commit: git commit -m init
+    - 上傳遠端: git push origin master
   - 若有原始專案
     - 第一種方式: git init -> git remote add [名稱(origin)] [網址] -> git pull [名稱(origin)] [分支] 
     - 第二種方式: git clone [網址]
       - 複製他人專案分支 : git clone [網址] [分支名稱]
     - 若要觀看遠端分支資料: git checkout [遠端分支名稱(可由git branch -a觀看)]
       - ex: git checkout origin/experimental
-    - 若要修改遠端分支資料(本地分支會多一個新分支): git checkout 遠端的分支名稱
+    - 若要修改遠端分支資料(本地分支會多一個新分支): git checkout [遠端分支名稱]
       - ex: git checkout experimental
-    - 複製單一分支: git clone --single-branch --branch <branchname> <remote-repo>
-      - git clone -b <branch> <remote_repo>
+    - 複製單一分支: git clone --single-branch --branch [分支名稱] [遠端位置]
+      - git clone -b [分支名稱] [遠端位置]
     - 更新遠端所有分支: git remote update origin --prune
   - 新增遠端位置(clone原始檔案則已有origin) : git remote add 遠端名稱(自設) 建立的遠端位置(url)
   - 查看有哪些遠端位置 : git remote -v
   - 取得遠端資訊(若取得不到) : git fetch origin 
   - 查看所有分支: git branch -r 
     - 離開: q
-  - 刪除分支: git branch -d <branch>
+  - 刪除分支: git branch -d [分支名稱]
   - 新增分支dev於 master 底下 : git branch dev (master:可加可不加,但要在master底下) 
   - 將分支上傳(遠端和本地都將會出現新分支) : git push origin dev 
   - 查看目前在哪個分支 : git branch 
