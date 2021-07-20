@@ -9,7 +9,8 @@
   - git config --global user.name
   - git config --global user.email
 - 重設遠端分支網址
-  - git remote set-url [yourRemoteName] [url]
+  - git remote set-url [遠端位置名稱] [url]
+  - 改變遠端位置名稱: git remote rename [原名稱] [修改名稱]
   
 ### 開始專案
   - 無原始檔案
@@ -33,8 +34,9 @@
   - 新增遠端位置(clone原始檔案則已有origin) : git remote add 遠端名稱(自設) 建立的遠端位置(url)
   - 查看有哪些遠端位置 : git remote -v
   - 取得遠端資訊(若取得不到) : git fetch origin 
-  - 查看所有分支 : git branch -r 
-    - 若要刪除分支 : git branch -d <branch>
+  - 查看所有分支: git branch -r 
+    - 離開: q
+  - 刪除分支: git branch -d <branch>
   - 新增分支dev於 master 底下 : git branch dev (master:可加可不加,但要在master底下) 
   - 將分支上傳(遠端和本地都將會出現新分支) : git push origin dev 
   - 查看目前在哪個分支 : git branch 
@@ -119,10 +121,3 @@
     - 刪除指定暫存: git stash drop stash@{0}
   - 清除全部暫存: git stash clear
   - 查看目前所有暫存: git stash list
-  
-### 使用與設定遠端:
-  - 於github開新專案
-  - git clone 遠端位址 (分支名稱:預設master)
-  - 若要改變遠端位置名稱: git remote rename 原名稱 修改名稱
-  - 若單純推送主支(master): git push
-  - 推送分支: git push origin(遠端位置名稱) 分支名稱
