@@ -8,7 +8,8 @@
 - 查看git設定
   - git config --global user.name
   - git config --global user.email
-  
+
+---
 ### 開始專案
   - 無原始檔案
     - 初始化 git: git init
