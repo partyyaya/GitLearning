@@ -15,6 +15,7 @@
   - 無原始檔案
     - git init
     - git remote add [名稱(origin)] [網址]
+      - 網址可透過 github 開新專案後取得
     - git add .
     - git commit -m init
     - git push origin master
@@ -52,17 +53,17 @@
   - git push (遠端位置或名稱(origin)) (分支名稱)
   
 ### 合併遠端分支
-  - git checkout 到主要分支
-  - git merge 分支名稱
-  - git push origin dev
+  - git checkout [主要分支]
+  - git merge [分支]
+  - git push origin [主要分支]
   - 刪除遠端分支: 
-    - git branch -d branch1
-    - git push origin :branch1
+    - 先刪除本地分支: git branch -d [分支]
+    - 將刪除分支資訊上傳到遠端: git push origin :[分支]
   - 若碰到錯誤情況
     - 回到分支(git checkout 分支名稱)
-    - 更新專案 : git pull origin 主要分支
-    - 合併專案 : git merge dev
-    - 上傳 : git push origin dev
+    - 更新專案: git pull origin [主要分支]
+    - 合併專案: git merge [分支]
+    - 上傳更新: git push origin [主要分支]
     
 ### gitignore
   - 直接使用記事本新增即可(utf-8編碼存取)
@@ -79,7 +80,7 @@
   
 ### git 常用指令
   - 切換分支或看紀錄
-    - git checkout (commit前4碼-可由git log觀看)
+    - git checkout (commit前4碼，可由git log觀看)
     - 復原則直接切換到該分支即可
   - 本地更新遠端所有資訊與分支
     - git remote update origin --prune
@@ -92,8 +93,8 @@
       - 2.git add . 
       - 3.git commit '你merge哪些東西'
   - 救回不小心刪除的檔案
-    - git checkout 123.txt:將123.txt的檔案回復到上一次的Commit的狀態
-    - git checkout HEAD~2 123.txt:將回復到兩個版本以前的123.txt
+    - git checkout xxx.txt: 將 xxx.txt 的檔案回復到上一次的Commit的狀態
+    - git checkout HEAD~2 xxx.txt:將回復到兩個版本以前的 xxx.txt
     - git checkout . :將檔案回復到上一次Commit的狀態
   - git blame index.html:查看該檔案修改的所有紀錄
   - git reflog:查看移動HEAD移動歷程(狀態每當你的HEAD有移動~他就會在這邊記上一筆)
