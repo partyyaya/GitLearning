@@ -1,6 +1,6 @@
 ## git 使用指令
 
-### 基本設定
+### 基本使用
 - [git 安裝](https://git-scm.com/downloads)
 - 設定 git 使用者
   - 設定名字 : git config --global user.name "名字"
@@ -8,8 +8,6 @@
 - 查看git設定
   - git config --global user.name
   - git config --global user.email
-- 重設遠端分支網址: git remote set-url [遠端位置名稱] [url]
-- 改變遠端位置名稱: git remote rename [原名稱] [修改名稱]
   
 ### 開始專案
   - 無原始檔案
@@ -23,20 +21,14 @@
     - 第一種方式: git init -> git remote add [名稱(origin)] [網址] -> git pull [名稱(origin)] [分支] 
     - 第二種方式: git clone [網址]
       - 複製他人專案分支 : git clone [網址] [分支名稱]
-    - 若要觀看遠端分支資料: git checkout [遠端分支名稱(可由git branch -a觀看)]
-      - ex: git checkout origin/experimental
-    - 若要修改遠端分支資料(本地分支會多一個新分支): git checkout [遠端分支名稱]
-      - ex: git checkout experimental
-    - 複製單一分支: git clone --single-branch --branch [分支名稱] [遠端位置]
-      - git clone -b [分支名稱] [遠端位置]
-    - 更新遠端所有分支: git remote update origin --prune
-  - 新增遠端位置(clone原始檔案則已有origin) : git remote add 遠端名稱(自設) 建立的遠端位置(url)
-  - 查看有哪些遠端位置 : git remote -v
+      - 若要觀看遠端分支資料: git checkout [遠端分支名稱(可由 git branch -r 觀看)]
+        - ex: git checkout origin/experimental
+      - 若要修改遠端分支資料(本地分支會多一個新分支): git checkout [遠端分支名稱]
+        - ex: git checkout experimental
+      - 複製單一分支: git clone --single-branch --branch [分支名稱] [遠端位置]
+        - git clone -b [分支名稱] [遠端位置]
+      - 更新遠端所有分支: git remote update origin --prune
   - 取得遠端資訊(若取得不到) : git fetch origin 
-  - 查看所有分支: git branch -r 
-    - 離開: q
-  - 刪除分支: git branch -d [分支名稱]
-  - 新增分支dev於 master 底下 : git branch dev (master:可加可不加,但要在master底下) 
   - 將分支上傳(遠端和本地都將會出現新分支) : git push origin dev 
   - 查看目前在哪個分支 : git branch 
   - 切換至分支 : git checkout dev  
@@ -99,6 +91,22 @@
     - git checkout . :將檔案回復到上一次Commit的狀態
   - git blame index.html:查看該檔案修改的所有紀錄
   - git reflog:查看移動HEAD移動歷程(狀態每當你的HEAD有移動~他就會在這邊記上一筆)
+
+### git branch 常用指令
+  - 查看所有遠端分支: git branch -r
+    - 結束: q
+  - 查看所有分支: git branch -a
+    - 結束: q
+  - 查看本地所有分支: git branch
+  - 新增遠端位置: git remote add [名稱(origin)] [網址]
+  - 刪除分支: git branch -d [分支名稱]
+  - 新增 [新分支] 於 [主分支] 底下 : git branch [新分支] ([主分支可加可不加,但要在主分支底下) 
+
+### git remote 常用指令
+  - 重設遠端分支網址: git remote set-url [遠端位置名稱] [url]
+  - 改變遠端位置名稱: git remote rename [原名稱] [修改名稱]
+  - 查看有哪些遠端位置(使用 git clone 附有 origin): git remote -v
+  - 新增遠端位置: git remote add [名稱(origin)] [網址]
   
 ### 標籤使用(git tag)
   - 在此版本新增標籤: git tag 標籤名稱(git tag v1)
