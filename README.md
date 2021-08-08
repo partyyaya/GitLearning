@@ -64,15 +64,15 @@
 ### gitignore
   - 直接使用記事本新增即可(utf-8編碼存取)
     - 或使用終端機創建: touch .gitignore
-  - 可以觀看個程式語言需要忽略的檔案: https://github.com/github/gitignore
+  - 可以觀看個程式語言需要忽略的檔案: [gitignore](https://github.com/github/gitignore)
   - 忽略整個資料夾: 資料夾名/
   - 忽略類似附檔名檔案: *.副檔名
   - 若忽略發生錯誤使用指令矯正:
-    - ```
-      git rm -r --cached .
-      git add .
-      git commit -m "fixed untracked files"
-      ```
+  ```
+  git rm -r --cached .
+  git add .
+  git commit -m "fixed untracked files"
+  ```
 
 ---
 ### git branch 常用指令
