@@ -1,4 +1,4 @@
-### [Github 連結](https://github.com/partyyaya/GitLearning){:target="_blank"}
+### <a href="https://github.com/partyyaya/GitLearning" target="_blank">Github 連結</a>
 ## git 使用指令
 
 ### 基本使用
