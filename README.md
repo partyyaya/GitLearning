@@ -1,4 +1,3 @@
-### <a href="https://github.com/partyyaya/GitLearning">Github 連結</a>
 ## git 使用指令
 
 ### 基本使用
