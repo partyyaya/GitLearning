@@ -12,9 +12,10 @@
 - [git tag (git 標籤)](#user-content-tag)
 - [git stash (git 暫存)](#user-content-stash)
 - [其他使用指令](#user-content-other)
----
 
-### <a id="user-content-basic" href="#user-content-top" >基本使用</a>
+<hr id="user-content-basic" style="height: 2px;">
+
+### <a href="#user-content-top" >基本使用</a>
 - [git 安裝](https://git-scm.com/downloads)
 - 設定 git 使用者
   - 設定名字 : git config --global user.name "名字"
@@ -23,8 +24,9 @@
   - git config --global user.name
   - git config --global user.email
 
----
-### <a id="user-content-start" href="#user-content-top" >開始專案</a>
+<hr id="user-content-start" style="height: 2px;">
+
+### <a href="#user-content-top" >開始專案</a>
   - 無原始檔案
     - 初始化 git: git init
     - 新增遠端位置: git remote add [名稱(origin)] [網址]
@@ -45,8 +47,9 @@
       - 更新遠端所有分支: git remote update origin --prune
       - 取得遠端資訊(若取得不到) : git fetch origin  
     
----
-### <a id="user-content-update" href="#user-content-top" >上傳常用指令</a>
+<hr id="user-content-update" style="height: 2px;">
+
+### <a href="#user-content-top" >上傳常用指令</a>
   - 查看目前狀態: git status
     - 若對單一檔案想還原到上個commit狀態: git checkout 檔案名
     - 全部還原到上一版狀態: git reset --hard
@@ -58,8 +61,9 @@
     - 若想修改剛剛"最新"的 commit message: git commit --amend -m 想修改的訊息
   - git push (遠端位置或名稱(origin)) (分支名稱)
   
----
-### <a id="user-content-merge" href="#user-content-top" >合併分支(含遠端)</a>
+<hr id="user-content-merge" style="height: 2px;">
+
+### <a href="#user-content-top" >合併分支(含遠端)</a>
   - 先切換到主分支: git checkout [主要分支]
   - 多人合作時需先更新主要分支: git pull origin [主要分支]
   - 將分支合併到主分支: git merge [分支]
@@ -74,8 +78,9 @@
     - 合併專案: git merge [分支]
     - 上傳更新: git push origin [主要分支]
     
----
-### <a id="user-content-gitignore" href="#user-content-top" >gitignore</a>
+<hr id="user-content-gitignore" style="height: 2px;">
+
+### <a href="#user-content-top" >gitignore</a>
   - 直接使用記事本新增即可(utf-8編碼存取)
     - 或使用終端機創建: touch .gitignore
   - 可以觀看個程式語言需要忽略的檔案: [gitignore](https://github.com/github/gitignore)
@@ -88,8 +93,9 @@
   git commit -m "fixed untracked files"
   ```
 
----
-### <a id="user-content-branch" href="#user-content-top" >git branch 常用指令</a>
+<hr id="user-content-branch" style="height: 2px;">
+
+### <a href="#user-content-top" >git branch 常用指令</a>
   - 查看所有遠端分支: git branch -r
     - 結束: q
   - 查看所有分支: git branch -a
@@ -99,16 +105,18 @@
   - 新增 [新分支] 於 [主分支] 底下 : git branch [新分支] [主分支]
     - 主分支可加可不加，但需在主分支底下 
 
----
-### <a id="user-content-remote" href="#user-content-top" >git remote 常用指令</a>
+<hr id="user-content-remote" style="height: 2px;">
+
+### <a href="#user-content-top" >git remote 常用指令</a>
   - 重設遠端分支網址: git remote set-url [遠端位置名稱] [url]
   - 改變遠端位置名稱: git remote rename [原名稱] [修改名稱]
   - 查看有哪些遠端位置(使用 git clone 附有 origin): git remote -v
   - 新增遠端位置: git remote add [名稱(origin)] [網址]
   - 本地更新遠端所有資訊與分支: git remote update origin --prune
 
----
-### <a id="user-content-tag" href="#user-content-top" >git tag (git 標籤)</a>
+<hr id="user-content-tag" style="height: 2px;">
+
+### <a href="#user-content-top" >git tag (git 標籤)</a>
   - 在此版本新增標籤: git tag 標籤名稱(git tag v1)
   - 新增詳細標籤: git tag -am '敘述' 標籤名稱(git tag 'update xxxx' v1)
   - 切換到此標籤版本: git checkout v1(標籤名稱)
@@ -117,8 +125,9 @@
     - 若沒有設定標籤內容則會自帶當初此版本commit敘述內容
   - 刪除標籤: git tag -d v1(標籤名稱)
 
----
-### <a id="user-content-stash" href="#user-content-top" >git stash (git 暫存)</a>
+<hr id="user-content-stash" style="height: 2px;">
+
+### <a href="#user-content-top" >git stash (git 暫存)</a>
   - 暫存當前版本進度: git stash
     - (Untracked 狀態的檔案預設沒辦法被 Stash，需額外使用 -u)
     - 使用完會恢復到未更改的版本(git status 會發現 nothing to commit)
@@ -130,8 +139,9 @@
   - 清除全部暫存: git stash clear
   - 查看目前所有暫存: git stash list
 
----
-### <a id="user-content-other" href="#user-content-top" >其他使用指令</a>
+<hr id="user-content-other" style="height: 2px;">
+
+### <a href="#user-content-top" >其他使用指令</a>
   - 切換至該版本紀錄
     - git checkout (commit前4碼，可由git log觀看)
     - 復原則直接切換到該分支即可
