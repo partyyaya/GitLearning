@@ -2,6 +2,9 @@
 <a id="user-content-top"></a>
 
 ### 目錄
+<details open>
+<summary style="cursor: pointer;">&nbsp;目錄清單 </summary>
+
 - [基本使用](#user-content-basic)
 - [開始專案](#user-content-start)
 - [上傳常用指令](#user-content-update)
@@ -12,6 +15,8 @@
 - [git tag (git 標籤)](#user-content-tag)
 - [git stash (git 暫存)](#user-content-stash)
 - [其他使用指令](#user-content-other)
+
+</details>
 
 <hr id="user-content-basic" style="height: 2px;">
 
